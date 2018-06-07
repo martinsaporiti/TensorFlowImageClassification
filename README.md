@@ -10,8 +10,11 @@ Hacer intro...
 
 ## Jupyter
 
+## Entrenando y generando el modelo
+
 
 ## ¿Cómo probar el modelo?
+
 
 
 
