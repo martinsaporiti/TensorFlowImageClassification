@@ -10,8 +10,41 @@ Hacer intro...
 
 ## Jupyter
 
+El archivo Retrain.ipynb puede ser utilizado con [Jupyter](http://jupyter.org/). Permite generar y entrenar un modelo, testarlo y generar el modelo CoreML.
+
 ## Entrenando y generando el modelo
 
+Para generar y entrenar el modelo se disponibiliza un archivo bash retrain.sh:
+
+```
+IMAGE_SIZE=224
+ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+
+python3 retrain.py \
+   --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 \
+   --model_dir=tf_files/models/  --summaries_dir=tf_files/training_summaries/ \
+   --output_graph=tf_files/retrained_graph.pb   --output_labels=tf_files/retrained_labels.txt --architecture="${ARCHITECTURE}"  \
+   --image_dir=data
+
+```
+
+Este archivo bash no hace más que ejecutar el script de python, retrain.py enviando los parámetros correspondientes necesarios. El script *retrain.py* fue desarrollado por la gente de tensorflow. Notar que el parámtro **--image_dir** debe tener el path al root donde se encuentran las imágenes a ser clasificadas. En este caso:
+
+
+```
+data
+  |- maradona
+  |- messi
+```
+
+Este modelo entonces podrá distinguir entre fotografías de Messi o Maradona. De ser necesario una nueva categoría, solamente se debe generar una carpeta y agregar allí, las nuevas imágenes y reentrenar el modelo:
+
+```
+data
+  |- maradona
+  |- messi
+  |- pele
+```
 
 ## ¿Cómo probar el modelo?
 
