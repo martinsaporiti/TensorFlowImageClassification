@@ -5,7 +5,14 @@ Scripts necesarios para entrenar un modelo que clasifique imágenes y el resulta
 
 Hacer intro...
 
+## Scripts interesantes
+
+
+## Jupyter
+
+
 ## ¿Cómo probar el modelo?
+
 
 
 ## ¿Cómo obtengo info del modelo generado?
