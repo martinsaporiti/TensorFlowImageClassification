@@ -5,8 +5,6 @@ Scripts necesarios para entrenar un modelo que clasifique imágenes y el resulta
 
 Hacer intro...
 
-## Scripts interesantes
-
 
 ## Jupyter
 
@@ -48,6 +46,13 @@ data
 
 ## ¿Cómo probar el modelo?
 
+El modelo generado puede ser testeado ejecutando el script bash test.sh:
+
+```
+python3 label_image.py --graph=tf_files/retrained_graph.pb --labels=tf_files/retrained_labels.txt --image=data/maradona.jpg
+
+```
+En este caso se espera que el resultado arroje a *Maradona* como el rostro detectado en la fotografía.
 
 
 
