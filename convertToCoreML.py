@@ -1,5 +1,7 @@
 import tfcoreml as tf_converter
 
+class_labels = 'imagenet_slim_labels.txt'
+
 tf_converter.convert(tf_model_path = 'tf_files/retrained_graph.pb',
                      mlmodel_path = 'maradona.mlmodel',
                      image_input_names = 'input:0',
